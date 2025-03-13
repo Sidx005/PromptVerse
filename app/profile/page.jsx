@@ -2,20 +2,9 @@
 import React, { Suspense, useEffect, useState } from 'react'
 import Profile from '@components/Profile'
 import { useSession } from '@node_modules/next-auth/react'
-import { useRouter } from '@node_modules/next/navigation'
-
-// Component that doesn't use useSearchParams
-const ProfilePage = () => {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <ProfileContent />
-    </Suspense>
-  )
-}
+import { useRouter, useSearchParams } from '@node_modules/next/navigation'
 
 // Separate component that uses useSearchParams
-import { useSearchParams } from '@node_modules/next/navigation'
-
 const ProfileContent = () => {
   const {data:session} = useSession()
   const searchParams = useSearchParams()
@@ -65,6 +54,15 @@ const ProfileContent = () => {
       handleEdit={handleEdit}
       handleDelete={handleDelete}
     />
+  )
+}
+
+// Component that doesn't use useSearchParams
+const ProfilePage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ProfileContent />
+    </Suspense>
   )
 }
 
