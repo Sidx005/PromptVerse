@@ -3,7 +3,7 @@ import Form from '@components/Form'
 import { useSession } from '@node_modules/next-auth/react'
 import { useRouter,useSearchParams } from '@node_modules/next/navigation'
 // import { useRouter } from '@node_modules/next/router'
-import React, { useEffect, useState } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 
 const EditPrompt = () => {
   // const {data:session}=useSession()
@@ -58,7 +58,10 @@ console.log(promptId);
        }
     }
   return (
+    <Suspense fallback={<div>Loading...</div>}>
    <Form type="Edit" post={post} setPost={setPost} submitting={submitting} handleSubmit={updatePrompt} />
+
+    </Suspense>
   )
 }
 
