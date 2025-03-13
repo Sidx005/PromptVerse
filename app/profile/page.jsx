@@ -60,7 +60,7 @@ const ProfileContent = () => {
 // Component that doesn't use useSearchParams
 const ProfilePage = () => {
   return (
-    <Suspense>
+    <Suspense fallback={<div>Loading...</div>}>
       <ProfileContent />
     </Suspense>
   )
