@@ -1,5 +1,5 @@
 'use client'
-import { SessionProvider } from '@node_modules/next-auth/react'
+import { SessionProvider } from 'next-auth/react'
 import React from 'react'
 // SessionProvider
 const Provider = ({children,session}) => {

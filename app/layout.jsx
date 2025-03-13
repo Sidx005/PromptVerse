@@ -1,7 +1,6 @@
 
 import Nav from '@components/Nav'
 import Provider from '@components/Provider'
-import Head from '@node_modules/next/head'
 // import { SessionProvider } from '@node_modules/next-auth/react'
 import '@styles/globals.css'
 export const metadata={

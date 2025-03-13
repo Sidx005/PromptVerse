@@ -56,12 +56,12 @@ console.log(promptId);
        finally{
           setSubmitting(false)
        }
-    }
+    };
+    if (!promptId) return <div>Loading...</div>; // ✅ Prevents rendering issues
+
   return (
-    <Suspense fallback={<div>Loading...</div>}>
    <Form type="Edit" post={post} setPost={setPost} submitting={submitting} handleSubmit={updatePrompt} />
 
-    </Suspense>
   )
 }
 
