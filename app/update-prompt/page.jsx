@@ -2,7 +2,7 @@
 import Form from '@components/Form'
 import { useSession } from '@node_modules/next-auth/react'
 import { useRouter } from '@node_modules/next/navigation'
-import React, { Suspense } from 'react'
+import React, { Suspense, useState } from 'react'
 
 // Main component with Suspense
 const EditPromptPage = () => {
